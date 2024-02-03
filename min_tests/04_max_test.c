@@ -6,17 +6,16 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:37:53 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:03:00 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include <limits.h>
-#include <stdlib.h>
 
 int	max_test(void)
 {
-	if (ft_abs(INT_MAX) != abs(INT_MAX))
+	if (ft_min(5, INT_MAX) != 5)
 		return (-1);
 	return (0);
 }
