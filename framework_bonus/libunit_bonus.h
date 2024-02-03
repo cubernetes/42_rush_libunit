@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_neg_test.c                                      :+:      :+:    :+:   */
+/*   libunit_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 19:12:54 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/02 19:45:56 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 18:49:07 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
-#include <stdlib.h>
+#ifndef LIBUNIT_H
+# define LIBUNIT_H 1
 
-int	neg_test(void)
+# include "../libft/libft.h"
+
+typedef struct s_test
 {
-	if (ft_abs(-5) != abs(-5))
-		return (-1);
-	return (0);
-}
+	char	*name;
+	int		(*func)(void);
+}			t_test;
+
+int			launch_tests(t_ddeque *tests, char *routine_name);
+void		load_test(t_ddeque *tests, char *name, int (*func)(void));
+
+#endif /* libunit.h. */
