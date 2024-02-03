@@ -6,7 +6,7 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 19:13:43 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:15:18 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	zero_test(void)
 {
-	if (ft_min(0, 5) != 0)
+	if (ft_abs(0) != abs(0))
 		return (-1);
 	return (0);
 }
