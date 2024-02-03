@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_zero_test.c                                     :+:      :+:    :+:   */
+/*   min_tests.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 15:59:06 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/02 23:16:35 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 15:58:24 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <stdlib.h>
+#ifndef ABS_TESTS_H
+# define ABS_TESTS_H
 
-int	zero_test(void)
-{
-	if (ft_abs(0) != abs(0))
-		return (-1);
-	return (0);
-}
+# define ROUTINE_NAME "MIN"
+
+int	pos_test(void);
+int	neg_test(void);
+int	zero_test(void);
+int	max_test(void);
+int	min_test(void);
+
+#endif

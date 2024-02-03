@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_zero_test.c                                     :+:      :+:    :+:   */
+/*   min_launcher.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 15:59:06 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 15:58:47 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "min_tests.h"
+#include "../framework/libunit.h"
 #include "../libft/libft.h"
-#include <stdlib.h>
 
-int	zero_test(void)
+int	min_launcher(void)
 {
-	if (ft_abs(0) != abs(0))
-		return (-1);
+	t_ddeque	*tests;
+	int			ret;
+
+	tests = ddeque_init();
+	load_test(tests, "Positive test", pos_test);
+	load_test(tests, "Negative test", neg_test);
+	load_test(tests, "Zero test", zero_test);
+	load_test(tests, "INT_MAX test", max_test);
+	load_test(tests, "INT_MIN test", min_test);
+	return (launch_tests(tests, ROUTINE_NAME));
+}
+
+int	main(void)
+{
+	min_launcher();
 	return (0);
 }

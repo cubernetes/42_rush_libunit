@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_zero_test.c                                     :+:      :+:    :+:   */
+/*   02_neg_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 15:59:06 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:35:30 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-int	zero_test(void)
+int	null_test(void)
 {
-	if (ft_abs(0) != abs(0))
+	if (ft_abs(-5) != abs(-5))
 		return (-1);
 	return (0);
 }

@@ -6,12 +6,12 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:35:30 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 15:59:10 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <string.h>
+#include <stdlib.h>
 
 int	null_test(void)
 {
