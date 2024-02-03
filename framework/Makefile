@@ -6,34 +6,37 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 19:36:56 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/02 19:41:03 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/03 01:13:05 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := main
+NAME := libunit.a
 
-SRC = main.c
-OBJ = main.o
+LIBFT_DIR = ../libft
+
+SRC = libunit.c
+OBJ = libunit.o
 LIBFT = libft.a
+HEADERS = libunit.h
 
-INCLUDE = ./include
-LIBFT_DIR = ./libft
-
+AR = ar rcs
 CC = cc
 RM = /bin/rm -f
+CP = /bin/cp -f
 
-LDFLAGS = -Llibft
-LDLIBS = -lft
+CFLAGS = -Wall -Wextra -Werror -std=c89 -pedantic -Wconversion
 
-all: $(NAME)
+all: libft $(NAME)
 
-$(NAME): $(LIBFT_DIR)/$(LIBFT) $(OBJ)
-	$(CC) -o $@ $(LDFLAGS) $(OBJ) $(LDLIBS)
+$(NAME): $(OBJ)
+	$(CP) $(LIBFT_DIR)/$(LIBFT) $@
+	$(AR) $@ $^
 
-$(LIBFT_DIR)/$(LIBFT):
+%.o: %.c libunit.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+libft:
 	$(MAKE) -C $(LIBFT_DIR)
-
-%.o: %.c $(INCLUDE)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) $@
@@ -45,4 +48,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re fclean clean all
+.PHONY: re fclean clean all libft

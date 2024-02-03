@@ -6,15 +6,13 @@
 /*   By: tischmid <tischmid@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:09:08 by tischmid          #+#    #+#             */
-/*   Updated: 2024/02/02 19:36:04 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 00:23:52 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H 1
 
-/* TODO: remove debug include */
-# include "../include/debug.h"
 # include <stdarg.h>
 # include <stddef.h>
 # include <sys/types.h>
@@ -261,6 +259,10 @@ void							ddeque_extend_free(t_ddeque *ddeque_a,
 t_bool							ddeque_equal(t_ddeque *ddeque_a,
 									t_ddeque *ddeque_b,
 									t_bool (cmp)(void *, void *));
+void							ddeque_iter(t_ddeque *ddeque,
+									void (*f)(void *data));
+int								ddeque_sum(t_ddeque *ddeque,
+									int (*f)(void *data));
 
 /* misc */
 t_bool							cmp_int_asc(int a, int b);

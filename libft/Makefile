@@ -6,17 +6,14 @@
 #    By: tischmid <tischmid@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:09:11 by tischmid          #+#    #+#              #
-#    Updated: 2024/02/02 04:34:02 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/03 00:24:51 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # CC = cc
 unexport CFLAGS
-# TODO: change -O0 to -03 and remove -g3
-# TODO: change -std=c99 to -std=c89 (used for variadic macro)
-# TODO: add back -pedantic flag
-CFLAGS += -O0 -g3 -Wall -Wextra -Werror \
-          -std=c99 -Wconversion \
+CFLAGS += -O0 -Wall -Wextra -Werror \
+          -std=c89 -pedantic -Wconversion \
           -Wunused -Wunreachable-code -Wshadow
 unexport LDFLAGS
 LDFLAGS = -rdynamic
@@ -165,6 +162,8 @@ SRC += ddeque_push_value_bottom.c
 SRC += ddeque_push_node_top.c
 SRC += ddeque_push_value_top.c
 SRC += ddeque_equal.c
+SRC += ddeque_iter.c
+SRC += ddeque_sum.c
 
 _OBJ = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJDIR)/,$(_OBJ))

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   strlen_tests.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tischmid <tischmid@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 05:15:30 by tischmid          #+#    #+#             */
-/*   Updated: 2024/02/03 00:28:39 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/02 23:16:35 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 00:49:35 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
+#ifndef STRLEN_TESTS_H
+# define STRLEN_TESTS_H
+
+# define ROUTINE_NAME "STRLEN"
+
+int	hello_test(void);
+int	null_test(void);
+int	bigger_string_test(void);
+int	zero_test(void);
+int	newline_test(void);
+
+#endif

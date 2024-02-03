@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   03_bigger_string_test.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tischmid <tischmid@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 05:15:30 by tischmid          #+#    #+#             */
-/*   Updated: 2024/02/03 00:28:39 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 00:47:54 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+#include "../libft/libft.h"
+#include <string.h>
+
+int	bigger_string_test(void)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	const char	*str;
+
+	str = "longstringlongstringlongstringlongstring";
+	if (strlen(str) != ft_strlen(str))
+		return (-1);
+	return (0);
 }
