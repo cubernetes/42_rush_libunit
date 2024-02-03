@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   abs_tests.h                                        :+:      :+:    :+:   */
+/*   libft_unit_tests.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 23:16:35 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:38:43 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:19:06 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ABS_TESTS_H
-# define ABS_TESTS_H
+#ifndef LIBFT_UNIT_TESTS_H
+# define LIBFT_UNIT_TESTS_H 1
 
-# define ROUTINE_NAME "ABS"
+int	strlen_launcher(void);
+int	abs_launcher(void);
+int	min_launcher(void);
 
-int	pos_test(void);
-int	neg_test(void);
-int	zero_test(void);
-int	max_test(void);
-int	min_test(void);
-
-#endif
+#endif /* libft_unit_tests.h. */

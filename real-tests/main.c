@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_min_test.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:37:57 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:48:55 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <limits.h>
-#include <stdlib.h>
+#include "include/libft_unit_tests.h"
 
-int	min_test(void)
+int	main(void)
 {
-	if (ft_abs(INT_MIN) != abs(INT_MIN))
-		return (-1);
+	abs_launcher();
+	strlen_launcher();
+	// min_launcher();
+	free_all_ptrs();
 	return (0);
 }

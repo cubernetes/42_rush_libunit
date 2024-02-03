@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_hello_test.c                                    :+:      :+:    :+:   */
+/*   03_zero_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:33:08 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 17:21:09 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	hello_test(void)
+int	zero_test(void)
 {
-	const char	*str;
-
-	str = "hello";
-	if (strlen(str) != ft_strlen(str))
+	if (ft_abs(0) != abs(0))
 		return (-1);
 	return (0);
 }

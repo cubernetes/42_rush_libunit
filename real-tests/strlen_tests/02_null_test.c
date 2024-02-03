@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_max_test.c                                      :+:      :+:    :+:   */
+/*   02_null_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:37:53 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:20:35 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <limits.h>
-#include <stdlib.h>
+#include "../../libft/libft.h"
+#include <string.h>
 
-int	max_test(void)
+int	null_test(void)
 {
-	if (ft_abs(INT_MAX) != abs(INT_MAX))
+	const char	*str;
+
+	str = NULL;
+	if (strlen(str) != ft_strlen(str))
 		return (-1);
 	return (0);
 }

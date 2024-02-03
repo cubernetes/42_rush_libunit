@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_newline_test.c                                  :+:      :+:    :+:   */
+/*   02_neg_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:48:21 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 17:21:07 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	newline_test(void)
+int	neg_test(void)
 {
-	const char	*str;
-
-	str = "hello\nworld";
-	if (strlen(str) != ft_strlen(str))
+	if (ft_abs(-5) != abs(-5))
 		return (-1);
 	return (0);
 }

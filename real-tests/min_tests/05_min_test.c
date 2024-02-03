@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_max_test.c                                      :+:      :+:    :+:   */
+/*   05_min_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:37:53 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:21:50 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../../libft/libft.h"
 #include <limits.h>
 #include <stdlib.h>
 
-int	max_test(void)
+int	min_test(void)
 {
-	if (ft_abs(INT_MAX) != abs(INT_MAX))
+	if (ft_abs(INT_MIN) != abs(INT_MIN))
 		return (-1);
 	return (0);
 }
