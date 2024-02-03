@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   abs_launcher.c                                     :+:      :+:    :+:   */
+/*   strlen_launcher.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:38:19 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:26:06 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "abs_tests.h"
-#include "../framework/libunit.h"
-#include "../libft/libft.h"
+#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
 
-int	abs_launcher(void)
+#define ROUTINE_NAME "STRLEN"
+
+int	hello_test(void);
+int	null_test(void);
+int	bigger_string_test(void);
+int	nul_test(void);
+int	newline_test(void);
+
+int	strlen_launcher(void)
 {
 	t_ddeque	*tests;
 	int			ret;
 
 	tests = ddeque_init();
-	load_test(tests, "Positive test", pos_test);
-	load_test(tests, "Negative test", neg_test);
-	load_test(tests, "Zero test", zero_test);
-	load_test(tests, "INT_MAX test", max_test);
-	load_test(tests, "INT_MIN test", min_test);
+	load_test(tests, "Hello test", hello_test);
+	load_test(tests, "NULL test", null_test);
+	load_test(tests, "Bigger string test", bigger_string_test);
+	load_test(tests, "Zero test", nul_test);
+	load_test(tests, "newline test", newline_test);
 	return (launch_tests(tests, ROUTINE_NAME));
-}
-
-int	main(void)
-{
-	abs_launcher();
-	return (0);
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_null_test.c                                     :+:      :+:    :+:   */
+/*   03_zero_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:49:52 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 19:13:43 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	null_test(void)
+int	zero_test(void)
 {
-	const char	*str;
-
-	str = NULL;
-	if (strlen(str) != ft_strlen(str))
+	if (ft_min(0, 5) != 0)
 		return (-1);
 	return (0);
 }

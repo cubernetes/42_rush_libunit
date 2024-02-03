@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 01:20:32 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 17:54:26 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,8 @@ int	launch_tests(t_ddeque *tests, char *routine_name)
 	int	number_of_tests_failed;
 
 	number_of_tests_failed = execute_tests(tests, routine_name);
-	ft_printf("%d/%d tests checked\n",
+	ft_printf("%d/%d tests succeded\n",
 		tests->size - (size_t)number_of_tests_failed, tests->size);
-	free_all_ptrs();
 	if (number_of_tests_failed == 0)
 		return (0);
 	return (-1);

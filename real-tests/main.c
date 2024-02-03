@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_pos_test.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 14:35:11 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:48:55 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <stdlib.h>
+#include "include/libft_unit_tests.h"
 
-int	pos_test(void)
+int	main(void)
 {
-	if (ft_abs(5) != abs(5))
-		return (-1);
+	abs_launcher();
+	strlen_launcher();
+	// min_launcher();
+	free_all_ptrs();
 	return (0);
 }

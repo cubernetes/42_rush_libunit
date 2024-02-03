@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_neg_test.c                                      :+:      :+:    :+:   */
+/*   05_newline_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:02:12 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:20:47 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../../libft/libft.h"
+#include <string.h>
 
-int	neg_test(void)
+int	newline_test(void)
 {
-	if (ft_min(-5, 10) != -5)
+	const char	*str;
+
+	str = "hello\nworld";
+	if (strlen(str) != ft_strlen(str))
 		return (-1);
 	return (0);
 }

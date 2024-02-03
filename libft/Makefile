@@ -6,13 +6,13 @@
 #    By: tischmid <tischmid@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:09:11 by tischmid          #+#    #+#              #
-#    Updated: 2024/02/03 00:24:51 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/03 17:51:27 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # CC = cc
 unexport CFLAGS
-CFLAGS += -O0 -Wall -Wextra -Werror \
+CFLAGS += -O0 -g3 -Wall -Wextra -Werror \
           -std=c89 -pedantic -Wconversion \
           -Wunused -Wunreachable-code -Wshadow
 unexport LDFLAGS
@@ -147,6 +147,7 @@ SRC += deque_argmax.c
 
 SRC += ddeque_init.c
 SRC += ddeque_print.c
+SRC += ddeque_print_debug.c
 SRC += ddeque_index.c
 SRC += ddeque_slice.c
 SRC += ddeque_sort.c

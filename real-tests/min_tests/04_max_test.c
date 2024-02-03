@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_tests.h                                     :+:      :+:    :+:   */
+/*   04_max_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 23:16:35 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:49:35 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:21:45 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_TESTS_H
-# define STRLEN_TESTS_H
+#include "../../libft/libft.h"
+#include <limits.h>
+#include <stdlib.h>
 
-# define ROUTINE_NAME "STRLEN"
-
-int	hello_test(void);
-int	null_test(void);
-int	bigger_string_test(void);
-int	zero_test(void);
-int	newline_test(void);
-
-#endif
+int	max_test(void)
+{
+	if (ft_abs(INT_MAX) != abs(INT_MAX))
+		return (-1);
+	return (0);
+}

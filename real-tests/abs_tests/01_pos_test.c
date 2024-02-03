@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_bigger_string_test.c                            :+:      :+:    :+:   */
+/*   01_pos_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:47:54 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/03 19:13:07 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	bigger_string_test(void)
+int	pos_test(void)
 {
-	const char	*str;
-
-	str = "longstringlongstringlongstringlongstring";
-	if (strlen(str) != ft_strlen(str))
+	if (ft_abs(5) != abs(5))
 		return (-1);
 	return (0);
 }
