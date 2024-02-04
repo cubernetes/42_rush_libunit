@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 20:40:54 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 21:17:17 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 21:56:25 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,6 @@ SRC += isdigit_tests/00_isdigit_launcher.c
 
 vpath %.c strlen_tests abs_tests min_tests isdigit_tests isascii_tests atoi_tests
 
-OBJDIR := ./obj
-
 OBJ := $(SRC:.c=.o)
 
 INCLUDE := include/libft_unit_tests.h
@@ -77,14 +75,11 @@ CFLAGS := -Wall -Wextra -Werror -O0 -pedantic -Wconversion -Wshadow
 
 all: libs $(NAME)
 
-$(NAME): libs $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $@ $(OBJ) $(LIBFT_DIR)/$(LIBFT) $(LIBUNIT_DIR)/$(LIBUNIT)
 
-$(OBJDIR)/%.o: %.c | $(OBJDIR)
+%.o: %.c
 	$(CC) -o $@ $(CFLAGS) $(CPPFLAGS) -c $<
-
-$(OBJDIR):
-	$(MKDIR) $@
 
 libs: libft libunit
 libft:
@@ -99,7 +94,6 @@ clean:
 	$(MAKE) -C $(LIBUNIT_DIR) $@
 	$(MAKE) -C $(LIBFT_DIR) $@
 	$(RM) $(OBJ)
-	$(RM) -r $(OBJDIR)
 
 fclean: clean
 	$(MAKE) -C $(LIBUNIT_DIR) $@

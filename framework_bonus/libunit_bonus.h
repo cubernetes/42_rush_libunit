@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libunit_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:45:56 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 18:49:07 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:50:41 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H 1
+#ifndef LIBUNIT_BONUS_H
+# define LIBUNIT_BONUS_H 1
 
 # include "../libft/libft.h"
 
@@ -24,4 +24,4 @@ typedef struct s_test
 int			launch_tests(t_ddeque *tests, char *routine_name);
 void		load_test(t_ddeque *tests, char *name, int (*func)(void));
 
-#endif /* libunit.h. */
+#endif /* libunit_bonus.h. */

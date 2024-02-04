@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 20:14:25 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 21:33:02 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 21:56:19 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,6 @@ SRC += signal_tests/03_ko_test.c
 SRC += signal_tests/04_buserror_test.c
 
 vpath %.c signal_tests
-
-OBJDIR := ./obj
 
 OBJ := $(SRC:.c=.o)
 
@@ -41,14 +39,11 @@ CFLAGS := -Wall -Wextra -Werror -O0 -std=c89 -pedantic -Wconversion -Wshadow
 
 all: libs $(NAME)
 
-$(NAME): libs $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $@ $(OBJ) $(LIBFT_DIR)/$(LIBFT) $(LIBUNIT_DIR)/$(LIBUNIT)
 
-$(OBJDIR)/%.o: %.c | $(OBJDIR)
+%.o: %.c
 	$(CC) -o $@ $(CFLAGS) $(CPPFLAGS) -c $<
-
-$(OBJDIR):
-	$(MKDIR) $@
 
 libs: libft libunit
 libft:
@@ -63,7 +58,6 @@ clean:
 	$(MAKE) -C $(LIBUNIT_DIR) $@
 	$(MAKE) -C $(LIBFT_DIR) $@
 	$(RM) $(OBJ)
-	$(RM) -r $(OBJDIR)
 
 fclean: clean
 	$(MAKE) -C $(LIBUNIT_DIR) $@
