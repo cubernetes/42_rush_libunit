@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_launcher.c                                    :+:      :+:    :+:   */
+/*   00_signal_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:34:38 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/04 00:32:11 by dkoca             #+#    #+#             */
+/*   Updated: 2024/02/04 21:33:19 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../framework/libunit.h"
 #include "../../libft/libft.h"
 
-#define ROUTINE_NAME "ATOI"
+#define ROUTINE_NAME "SIGNALS"
 
-int	pos_test(void);
-int	neg_test(void);
-int	zero_test(void);
-int	max_test(void);
-int	min_test(void);
+int	segv_test(void);
+int	ok_test(void);
+int	ko_test(void);
+int	buserror_test(void);
 
-int	atoi_launcher(void)
+int	signal_launcher(void)
 {
 	t_ddeque	*tests;
 
 	tests = ddeque_init();
-	load_test(tests, "Positive test", pos_test);
-	load_test(tests, "Negative test", neg_test);
-	load_test(tests, "Zero test", zero_test);
-	load_test(tests, "INT_MAX test", max_test);
-	load_test(tests, "INT_MIN test", min_test);
+	load_test(tests, "SIGSEGV Test", segv_test);
+	load_test(tests, "OK test", ok_test);
+	load_test(tests, "KO test", ko_test);
+	load_test(tests, "SIGBUS test", buserror_test);
 	return (launch_tests(tests, ROUTINE_NAME));
 }

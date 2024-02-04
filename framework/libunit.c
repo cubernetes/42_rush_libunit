@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:54:26 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 21:26:28 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,29 @@
 void	print_status(char *routine_name, char *testname, int status)
 {
 	if (status == 0)
-		ft_printf("%s: %s : [\033[32mOK\033[m]\n", routine_name, testname);
+		ft_printf("%s: %s: [\033[32mOK\033[m]\n", routine_name, testname);
 	else if (status == 255)
-		ft_printf("%s: %s : [\033[31mKO\033[m]\n", routine_name, testname);
+		ft_printf("%s: %s: [\033[31mKO\033[m]\n", routine_name, testname);
 	else if (status == 11)
-		ft_printf("%s: %s : [\033[41;30mSIGSEGV\033[m]\n",
+		ft_printf("%s: %s: [\033[41;30mSIGSEGV\033[m]\n",
 			routine_name, testname);
 	else if (status == 7)
-		ft_printf("%s: %s : [\033[43;30mSIGBUS\033[m]\n",
+		ft_printf("%s: %s: [\033[41;30mSIGBUS\033[m]\n",
+			routine_name, testname);
+	else if (status == 4)
+		ft_printf("%s: %s: [\033[41;30mSIGILL\033[m]\n",
+			routine_name, testname);
+	else if (status == 6)
+		ft_printf("%s: %s: [\033[41;30mSIGABRT\033[m]\n",
+			routine_name, testname);
+	else if (status == 8)
+		ft_printf("%s: %s: [\033[41;30mSIGFPE\033[m]\n",
+			routine_name, testname);
+	else if (status == 14)
+		ft_printf("%s: %s: [\033[43;30mSIGTIMEOUT (2 seconds)\033[m]\n",
+			routine_name, testname);
+	else
+		ft_printf("%s: %s: [\033[44;30mUNKNOWN ERROR/SIGNAL\033[m]\n",
 			routine_name, testname);
 }
 

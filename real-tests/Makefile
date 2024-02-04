@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 20:40:54 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 20:13:10 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 21:17:17 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC += strlen_tests/00_strlen_launcher.c
 SRC += strlen_tests/01_strlen_hello_test.c
 SRC += strlen_tests/02_strlen_null_test.c
 SRC += strlen_tests/03_strlen_bigger_string_test.c
-SRC += strlen_tests/04_strlen_nul_test.c
+SRC += strlen_tests/04_strlen_zero_test.c
 SRC += strlen_tests/05_strlen_newline_test.c
 
 SRC += abs_tests/00_abs_launcher.c
@@ -48,15 +48,15 @@ SRC += isascii_tests/04_isascii_null_test.c
 SRC += isascii_tests/01_isascii_char_test.c
 SRC += isascii_tests/00_isascii_launcher.c
 SRC += isascii_tests/02_isascii_num_test.c
-SRC += isascii_tests/05_isascii_newline_test.c
+SRC += isascii_tests/05_isascii_nonascii_test.c
 
-SRC += isdigt_tests/04_isdigit_null_test.c
-SRC += isdigt_tests/02_isdigit_num_test.c
-SRC += isdigt_tests/01_isdigit_char_test.c
-SRC += isdigt_tests/03_isdigit_space_test.c
-SRC += isdigt_tests/00_isdigit_launcher.c
+SRC += isdigit_tests/04_isdigit_null_test.c
+SRC += isdigit_tests/02_isdigit_num_test.c
+SRC += isdigit_tests/01_isdigit_char_test.c
+SRC += isdigit_tests/03_isdigit_space_test.c
+SRC += isdigit_tests/00_isdigit_launcher.c
 
-vpath %.c strlen_tests abs_tests min_tests isdigt_tests isascii_tests atoi_tests
+vpath %.c strlen_tests abs_tests min_tests isdigit_tests isascii_tests atoi_tests
 
 OBJDIR := ./obj
 
@@ -73,7 +73,7 @@ CC := gcc
 RM := /bin/rm -f
 MKDIR := /bin/mkdir -f
 
-CFLAGS := -Wall -Wextra -Werror -O0 -std=c89 -pedantic -Wconversion -Wshadow
+CFLAGS := -Wall -Wextra -Werror -O0 -pedantic -Wconversion -Wshadow
 
 all: libs $(NAME)
 

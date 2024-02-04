@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_null_test.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:20:35 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/04 21:21:21 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
-#include <string.h>
+#include "../libft/libft.h"
+#include "include/signal_tests.h"
 
-int	null_test(void)
+int	main(void)
 {
-	const char	*str;
-
-	str = NULL;
-	if (strlen(str) != ft_strlen(str))
-		return (-1);
+	signal_launcher();
 	return (0);
 }

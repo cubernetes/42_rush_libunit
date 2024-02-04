@@ -6,7 +6,7 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 22:52:50 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:22:02 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,5 @@
 int	abort_test(void)
 {
 	abort();
-	if (1)
-		return (-1);
-	return (0);
+	return (-1);
 }

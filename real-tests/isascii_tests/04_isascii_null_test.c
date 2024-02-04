@@ -6,7 +6,7 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:17:54 by dkoca            ###   ########.fr       */
+/*   Updated: 2024/02/04 21:14:59 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 int	isascii_null_test(void)
 {
 	if (ft_isascii(0))
-		return (-1);
-	return (0);
+		return (0);
+	return (-1);
 }

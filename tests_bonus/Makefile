@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 20:14:25 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 20:40:34 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 21:20:17 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,13 @@ NAME := tests
 
 unexport SRC
 SRC += main.c
-SRC += abort_test/00_abort_launcher.c
-SRC += abort_test/01_abort_test.c
-SRC += alarm_test/00_alarm_launcher.c
-SRC += alarm_test/01_alarm_test.c
-SRC += fpe_test/00_fpe_launcher.c
-SRC += fpe_test/01_fpe_test.c
-SRC += illegal_test/00_illegal_launcher.c
-SRC += illegal_test/01_illegal_test.c
+SRC += signal_tests/00_signal_launcher.c
+SRC += signal_tests/01_abort_test.c
+SRC += signal_tests/02_alarm_test.c
+SRC += signal_tests/03_fpe_test.c
+SRC += signal_tests/04_illegal_test.c
 
-vpath %.c abort_test alarm_test fpe_test illegal_test
+vpath %.c signal_tests
 
 OBJDIR := ./obj
 

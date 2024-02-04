@@ -6,7 +6,7 @@
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:21:50 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 21:09:45 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	min_min_test(void)
 {
-	if (ft_abs(INT_MIN) != abs(INT_MIN))
+	if (ft_abs(INT_MIN) != (unsigned int)abs(INT_MIN))
 		return (-1);
 	return (0);
 }

@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_zero_test.c                                     :+:      :+:    :+:   */
+/*   03_ko_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:21:42 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/04 00:34:14 by dkoca             #+#    #+#             */
+/*   Updated: 2024/02/04 21:32:17 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
-#include <stdlib.h>
-
-int	zero_test(void)
+int	ko_test(void)
 {
-	if (ft_abs(0) != abs(0))
-		return (-1);
-	return (0);
+	return (-1);
 }

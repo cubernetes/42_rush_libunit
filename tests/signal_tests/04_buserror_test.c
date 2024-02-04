@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strdup_null_test.c                              :+:      :+:    :+:   */
+/*   04_buserror_test.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:49:52 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/04 00:34:53 by dkoca             #+#    #+#             */
+/*   Updated: 2024/02/04 21:32:11 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include <stdlib.h>
 
-int	strdup_null_test(void)
+int	buserror_test(void)
 {
-	const char	*str;
+	char	*cptr;
+	int		*iptr;
 
-	str = NULL;
-	if (strdup(str) != ft_strdup(str))
-		return (-1);
+	__asm__("pushf\norl $0x40000, (%rsp)\npopf");
+	cptr = malloc(sizeof(int) + 1);
+	iptr = (int *)++cptr;
+	*iptr = 42;
 	return (0);
 }

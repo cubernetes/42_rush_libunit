@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_min_test.c                                      :+:      :+:    :+:   */
+/*   01_segv_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:21:50 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/04 00:33:50 by dkoca             #+#    #+#             */
+/*   Updated: 2024/02/04 21:31:46 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
-#include <limits.h>
-#include <stdlib.h>
-
-int	min_test(void)
+int	segv_test(void)
 {
-	if (ft_abs(INT_MIN) != abs(INT_MIN))
-		return (-1);
+	char	*str;
+
+	str = "4";
+	str++;
+	*str = '2';
 	return (0);
 }

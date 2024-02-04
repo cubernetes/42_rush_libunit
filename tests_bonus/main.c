@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:38:38 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 21:21:21 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 int	main(void)
 {
-	abort_launcher();
-	alarm_launcher();
-	fpe_launcher();
-	illegal_launcher();
+	signal_launcher();
 	return (0);
 }
