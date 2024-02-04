@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_fpe_test.c                                      :+:      :+:    :+:   */
+/*   04_nul_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 23:16:49 by pvasilan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:25:45 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define _GNU_SOURCE
 #include "../../libft/libft.h"
-#include <stdlib.h>
-#include <fenv.h>
+#include <string.h>
 
-int	fpe_test(void)
+int	nul_test(void)
 {
-	float	f;
+	const char	*str;
 
-	feenableexcept(FE_DIVBYZERO);
-	f = 10.0 / 0.0;
-	if (1)
+	str = "";
+	if (strlen(str) != ft_strlen(str))
 		return (-1);
 	return (0);
 }

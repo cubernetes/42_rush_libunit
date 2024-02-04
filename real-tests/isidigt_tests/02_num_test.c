@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   02_num_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:38:38 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 22:06:25 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "include/signal_tests.h"
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	main(void)
+int	num_test(void)
 {
-	abort_launcher();
-	alarm_launcher();
-	fpe_launcher();
-	illegal_launcher();
+	if (!ft_isdigit('4'))
+		return (-1);
 	return (0);
 }

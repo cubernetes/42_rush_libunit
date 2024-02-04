@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   abort_launcher.c                                   :+:      :+:    :+:   */
+/*   02_null_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 22:55:23 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:20:35 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
 #include "../../libft/libft.h"
+#include <string.h>
 
-#define ROUTINE_NAME "ABORT SIGNAL TEST"
-
-int	abort_test(void);
-
-int	abort_launcher(void)
+int	null_test(void)
 {
-	t_ddeque	*tests;
-	int			ret;
+	const char	*str;
 
-	tests = ddeque_init();
-	load_test(tests, "Abort test", abort_test);
-	return (launch_tests(tests, ROUTINE_NAME));
+	str = NULL;
+	if (strlen(str) != ft_strlen(str))
+		return (-1);
+	return (0);
 }

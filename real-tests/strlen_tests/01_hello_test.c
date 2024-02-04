@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_tests.h                                      :+:      :+:    :+:   */
+/*   01_hello_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 23:38:59 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:20:21 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BONUS_TESTS_H
-# define BONUS_TESTS_H 1
+#include "../../libft/libft.h"
+#include <string.h>
 
-int	abort_launcher(void);
-int	alarm_launcher(void);
-int	fpe_launcher(void);
-int	illegal_launcher(void);
+int	hello_test(void)
+{
+	const char	*str;
 
-#endif /* bonus_tests.h. */
+	str = "hello";
+	if (strlen(str) != ft_strlen(str))
+		return (-1);
+	return (0);
+}

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   illegal_launcher.c                                 :+:      :+:    :+:   */
+/*   05_min_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 22:55:31 by pvasilan         ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 21:57:05 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
 #include "../../libft/libft.h"
+#include <limits.h>
+#include <stdlib.h>
 
-#define ROUTINE_NAME "ILLEGAL SIGNAL TEST"
-
-int	illegal_test(void);
-
-int	illegal_launcher(void)
+int	min_test(void)
 {
-	t_ddeque	*tests;
-	int			ret;
-
-	tests = ddeque_init();
-	load_test(tests, "Illegal test", illegal_test);
-	return (launch_tests(tests, ROUTINE_NAME));
+	if (ft_atoi("–2147483648") != INT_MIN)
+		return (-1);
+	return (0);
 }

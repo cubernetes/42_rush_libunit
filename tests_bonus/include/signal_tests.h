@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libunit.h                                          :+:      :+:    :+:   */
+/*   signal_tests.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 19:45:56 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:39:52 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 23:38:59 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H 1
+#ifndef BONUS_TESTS_H
+# define BONUS_TESTS_H 1
 
-# include "../libft/libft.h"
+int	abort_launcher(void);
+int	alarm_launcher(void);
+int	fpe_launcher(void);
+int	illegal_launcher(void);
 
-typedef struct s_test
-{
-	char	*name;
-	int		(*func)(void);
-}			t_test;
-
-int			launch_tests(t_ddeque *tests, char *routine_name);
-void		load_test(t_ddeque *tests, char *name, int (*func)(void));
-
-#endif /* libunit.h. */
+#endif /* bonus_tests.h. */

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libunit.h                                          :+:      :+:    :+:   */
+/*   05_newline_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 19:45:56 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 20:39:52 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:20:47 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H 1
+#include "../../libft/libft.h"
+#include <string.h>
 
-# include "../libft/libft.h"
-
-typedef struct s_test
+int	newline_test(void)
 {
-	char	*name;
-	int		(*func)(void);
-}			t_test;
+	const char	*str;
 
-int			launch_tests(t_ddeque *tests, char *routine_name);
-void		load_test(t_ddeque *tests, char *name, int (*func)(void));
-
-#endif /* libunit.h. */
+	str = "hello\nworld";
+	if (strlen(str) != ft_strlen(str))
+		return (-1);
+	return (0);
+}

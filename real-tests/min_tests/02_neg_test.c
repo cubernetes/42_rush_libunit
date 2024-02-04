@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_sigfpe_test.c                                   :+:      :+:    :+:   */
+/*   02_neg_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 00:35:05 by dkoca             #+#    #+#             */
-/*   Updated: 2024/02/04 00:35:08 by dkoca            ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 19:12:54 by pvasilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-#include <limits.h>
-int sigfpe_test(void)
+int	neg_test(void)
 {
-	int nb;
-	int i;
-
-	nb = 7;
-	i = 0;
-	nb = nb / i;
+	if (ft_abs(-5) != abs(-5))
+		return (-1);
 	return (0);
-}
-
-int main()
-{
-	sigfpe_test();
 }

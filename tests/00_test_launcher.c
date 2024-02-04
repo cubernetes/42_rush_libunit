@@ -6,7 +6,7 @@
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 00:32:11 by dkoca             #+#    #+#             */
-/*   Updated: 2024/02/04 00:32:13 by dkoca            ###   ########.fr       */
+/*   Updated: 2024/02/04 20:36:09 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 int	error_test_launcher(void)
 {
 	t_ddeque	*tests;
-	int			ret;
 
 	tests = ddeque_init();
 	load_test(tests, "SIGSEGV Test", segv_test);
