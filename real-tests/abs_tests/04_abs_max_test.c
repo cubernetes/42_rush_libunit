@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_newline_test.c                                  :+:      :+:    :+:   */
+/*   04_abs_max_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:48:21 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 20:25:54 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <limits.h>
+#include <stdlib.h>
 
-int	newline_test(void)
+int	abs_max_test(void)
 {
-	const char	*str;
-
-	str = "hello\nworld";
-	if (strdup(str) != ft_strdup(str))
+	if (ft_abs(INT_MAX) != abs(INT_MAX))
 		return (-1);
 	return (0);
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_zero_test.c                                     :+:      :+:    :+:   */
+/*   01_isascii_char_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:48:09 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 20:18:23 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	zero_test(void)
+int	isascii_char_test(void)
 {
-	const char	*str;
-
-	str = "";
-	if (strdup(str) != ft_strdup(str))
+	if (!ft_isascii('c'))
 		return (-1);
 	return (0);
 }

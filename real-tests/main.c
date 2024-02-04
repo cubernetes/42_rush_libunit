@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_unit_tests.h                                 :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:19:06 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/03 17:48:55 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UNIT_TESTS_H
-# define LIBFT_UNIT_TESTS_H 1
+#include "../libft/libft.h"
+#include "include/libft_unit_tests.h"
 
-int	strlen_launcher(void);
-int	abs_launcher(void);
-int	min_launcher(void);
-
-#endif /* libft_unit_tests.h. */
+int	main(void)
+{
+	abs_launcher();
+	strlen_launcher();
+	// min_launcher();
+	free_all_ptrs();
+	return (0);
+}

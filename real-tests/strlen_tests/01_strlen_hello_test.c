@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_unit_tests.h                                 :+:      :+:    :+:   */
+/*   01_strlen_hello_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:19:06 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/04 20:20:04 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UNIT_TESTS_H
-# define LIBFT_UNIT_TESTS_H 1
+#include "../../libft/libft.h"
+#include <string.h>
 
-int	strlen_launcher(void);
-int	abs_launcher(void);
-int	min_launcher(void);
+int	strlen_hello_test(void)
+{
+	const char	*str;
 
-#endif /* libft_unit_tests.h. */
+	str = "hello";
+	if (strlen(str) != ft_strlen(str))
+		return (-1);
+	return (0);
+}

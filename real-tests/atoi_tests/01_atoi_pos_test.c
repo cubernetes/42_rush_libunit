@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_unit_tests.h                                 :+:      :+:    :+:   */
+/*   01_atoi_pos_test.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:19:06 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/04 20:23:41 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UNIT_TESTS_H
-# define LIBFT_UNIT_TESTS_H 1
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	strlen_launcher(void);
-int	abs_launcher(void);
-int	min_launcher(void);
-
-#endif /* libft_unit_tests.h. */
+int	atoi_pos_test(void)
+{
+	if (ft_atoi("5") != 5)
+		return (-1);
+	return (0);
+}

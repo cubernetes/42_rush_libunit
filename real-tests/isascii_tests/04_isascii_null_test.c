@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_null_test.c                                     :+:      :+:    :+:   */
+/*   04_isascii_null_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 00:49:52 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 20:17:54 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <string.h>
+#include "../../libft/libft.h"
+#include <stdlib.h>
 
-int	null_test(void)
+int	isascii_null_test(void)
 {
-	const char	*str;
-
-	str = NULL;
-	if (strdup(str) != ft_strdup(str))
+	if (ft_isascii(0))
 		return (-1);
 	return (0);
 }
