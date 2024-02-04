@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 19:36:56 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 22:24:18 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 22:45:48 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := libunit.a
 
 LIBFT_DIR := ../libft
 
-SRC := libunit_bonus.c
+SRC := libunit_bonus.c logging.c
 OBJ := libunit_bonus.o
 LIBFT := libft.a
 
