@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 22:43:45 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 22:45:31 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 23:26:29 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	print_status(int log_fd, char *r_name, char *testname, int status)
 		ft_printf("%s: %s: [\033[32mOK\033[m]\n", r_name, testname);
 	else if (status == 255)
 		ft_printf("%s: %s: [\033[31mKO\033[m]\n", r_name, testname);
+	else if (status == 254)
+		ft_printf("%s: %s: [\033[31mKO (STDOUT)\033[m]\n", r_name, testname);
 	else if (status == SIGSEGV)
 		ft_printf("%s: %s: [\033[41;30mSIGSEGV\033[m]\n", r_name, testname);
 	else if (status == SIGBUS)

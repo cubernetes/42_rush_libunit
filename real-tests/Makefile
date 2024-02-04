@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 20:40:54 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 22:41:26 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 23:31:27 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,13 @@ SRC += isdigit_tests/01_isdigit_char_test.c
 SRC += isdigit_tests/03_isdigit_space_test.c
 SRC += isdigit_tests/00_isdigit_launcher.c
 
+SRC += putchar_tests/00_putchar_launcher.c
+SRC += putchar_tests/01_putchar_a_test.c
+SRC += putchar_tests/02_putchar_b_test.c
+SRC += putchar_tests/03_putchar_zero_test.c
+SRC += putchar_tests/04_putchar_127_test.c
+SRC += putchar_tests/05_putchar_nl_test.c
+
 vpath %.c strlen_tests abs_tests min_tests isdigit_tests isascii_tests atoi_tests
 
 OBJ := $(SRC:.c=.o)
@@ -64,7 +71,7 @@ INCLUDE := include/libft_unit_tests.h
 
 LIBFT_DIR := ../libft
 LIBFT := libft.a
-LIBUNIT_DIR := ../framework
+LIBUNIT_DIR := ../framework_bonus
 LIBUNIT := libunit.a
 
 CC := gcc

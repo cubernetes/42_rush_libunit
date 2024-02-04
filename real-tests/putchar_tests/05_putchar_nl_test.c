@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   05_putchar_nl_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
+/*   By: pvasilan <pvasilan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 23:18:42 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/03 00:32:04 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/04 23:30:22 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "include/libft_unit_tests.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int	putchar_nl_test(void)
 {
-	abs_launcher();
-	strlen_launcher();
-	min_launcher();
-	atoi_launcher();
-	isdigit_launcher();
-	isascii_launcher();
-	putchar_launcher();
-	free_all_ptrs();
+	ft_putchar('\n');
 	return (0);
 }

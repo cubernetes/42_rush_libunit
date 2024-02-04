@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 22:45:21 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 23:26:16 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,21 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <string.h>
 #include <fcntl.h>
 
-int	run_test(int log_fd, char *routine_name, void *data)
+int	run_test(int log_fd, char *routine_name, t_test *test)
 {
-	t_test	*test;
 	pid_t	pid;
 	int		status;
+	int		fds[2];
+	char	buf;
+	ssize_t	bytes_read;
 
-	test = (t_test *)data;
+	pipe(fds);
 	pid = fork();
 	if (pid == -1)
 	{
@@ -35,7 +38,21 @@ int	run_test(int log_fd, char *routine_name, void *data)
 		return (43);
 	}
 	else if (pid == 0)
+	{
+		close(fds[0]);
+		dup2(fds[1], STDOUT_FILENO);
 		exit(test->func());
+	}
+	close(fds[1]);
+	bytes_read = read(fds[0], &buf, 1);
+	while (bytes_read)
+	{
+		if (*test->stdout++ != buf)
+			return (print_status(log_fd, routine_name, test->name, 254), 1);
+		bytes_read = read(fds[0], &buf, 1);
+	}
+	if (*test->stdout)
+		return (print_status(log_fd, routine_name, test->name, 254), 1);
 	wait(&status);
 	if (WIFEXITED(status))
 		status = WEXITSTATUS(status);
@@ -74,6 +91,19 @@ void	load_test(t_ddeque *tests, char *name, int (*func)(void))
 	test = ft_malloc(sizeof(*test));
 	test->name = name;
 	test->func = func;
+	test->stdout = ft_strdup("");
+	ddeque_push_value_bottom(tests, test);
+}
+
+void	load_test_stdout(t_ddeque *tests, char *name, int (*func)(void),
+		char *stdout)
+{
+	t_test	*test;
+
+	test = ft_malloc(sizeof(*test));
+	test->name = name;
+	test->func = func;
+	test->stdout = ft_strdup(stdout);
 	ddeque_push_value_bottom(tests, test);
 }
 
