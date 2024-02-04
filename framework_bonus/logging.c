@@ -6,12 +6,14 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 22:43:45 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 23:26:29 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 23:40:39 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libunit_bonus.h"
 #include "../libft/libft.h"
 #include <signal.h>
+#include <unistd.h>
 
 void	ft_log(int logfd, char *rname, char *tname, int status)
 {
@@ -66,4 +68,21 @@ void	print_status(int log_fd, char *r_name, char *testname, int status)
 	else
 		ft_printf("%s: %s: [\033[44;30mUNKNOWN ERROR/SIGNAL\033[m]\n",
 			r_name, testname);
+}
+
+int	check_stdout(int log_fd, t_test *test, char *routine_name, int fds[3])
+{
+	char	buf;
+	ssize_t	bytes_read;
+
+	bytes_read = read(fds[0], &buf, 1);
+	while (bytes_read)
+	{
+		if (*test->stdout++ != buf)
+			return (print_status(log_fd, routine_name, test->name, 254), 1);
+		bytes_read = read(fds[0], &buf, 1);
+	}
+	if (*test->stdout)
+		return (print_status(log_fd, routine_name, test->name, 254), 1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 23:26:16 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 23:38:45 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,9 @@
 int	run_test(int log_fd, char *routine_name, t_test *test)
 {
 	pid_t	pid;
-	int		status;
-	int		fds[2];
-	char	buf;
-	ssize_t	bytes_read;
+	int		fds[3];
 
-	pipe(fds);
-	pid = fork();
+	(free(NULL), pipe(fds), pid = fork());
 	if (pid == -1)
 	{
 		ft_printf("\033[31mfork() error in line %d\033[m\n", __LINE__);
@@ -39,29 +35,19 @@ int	run_test(int log_fd, char *routine_name, t_test *test)
 	}
 	else if (pid == 0)
 	{
-		close(fds[0]);
-		dup2(fds[1], STDOUT_FILENO);
+		(close(fds[0]), dup2(fds[1], STDOUT_FILENO));
 		exit(test->func());
 	}
 	close(fds[1]);
-	bytes_read = read(fds[0], &buf, 1);
-	while (bytes_read)
-	{
-		if (*test->stdout++ != buf)
-			return (print_status(log_fd, routine_name, test->name, 254), 1);
-		bytes_read = read(fds[0], &buf, 1);
-	}
-	if (*test->stdout)
-		return (print_status(log_fd, routine_name, test->name, 254), 1);
-	wait(&status);
-	if (WIFEXITED(status))
-		status = WEXITSTATUS(status);
-	else if (WIFSIGNALED(status))
-		status = WTERMSIG(status);
-	print_status(log_fd, routine_name, test->name, status);
-	if (status)
+	if (check_stdout(log_fd, test, routine_name, fds))
 		return (1);
-	return (0);
+	wait(fds + 2);
+	if (WIFEXITED(fds[2]))
+		fds[2] = WEXITSTATUS(fds[2]);
+	else if (WIFSIGNALED(fds[2]))
+		fds[2] = WTERMSIG(fds[2]);
+	print_status(log_fd, routine_name, test->name, fds[2]);
+	return (fds[2] != 0);
 }
 
 int	execute_tests(int log_fd, t_ddeque *ddeque, char *routine_name)
