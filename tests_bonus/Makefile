@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 20:14:25 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 21:56:43 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 22:03:49 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC += signal_tests/01_abort_test.c
 SRC += signal_tests/02_alarm_test.c
 SRC += signal_tests/03_fpe_test.c
 SRC += signal_tests/04_illegal_test.c
+SRC += signal_tests/05_pipe_test.c
 
 vpath %.c signal_tests
 

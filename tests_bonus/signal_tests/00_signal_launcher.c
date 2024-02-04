@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:27:35 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 21:30:34 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 22:04:46 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	abort_test(void);
 int	alarm_test(void);
 int	fpe_test(void);
 int	illegal_test(void);
+int	pipe_test(void);
 
 int	signal_launcher(void)
 {
@@ -28,6 +29,7 @@ int	signal_launcher(void)
 	load_test(tests, "abort test", abort_test);
 	load_test(tests, "fpe test", fpe_test);
 	load_test(tests, "illegal test", illegal_test);
+	load_test(tests, "pipe test", pipe_test);
 	load_test(tests, "alarm test", alarm_test);
 	return (launch_tests(tests, ROUTINE_NAME));
 }
