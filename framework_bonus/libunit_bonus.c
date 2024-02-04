@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 22:00:33 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 22:38:25 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,54 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <fcntl.h>
 
-void	print_status(char *r_name, char *testname, int status)
+void	ft_log(int logfd, char *rname, char *tname, int status)
 {
+	if (status == 0)
+		ft_dprintf(logfd, "%s: %s: [\033[32mOK\033[m]\n", rname, tname);
+	else if (status == 255)
+		ft_dprintf(logfd, "%s: %s: [\033[31mKO\033[m]\n", rname, tname);
+	else if (status == SIGSEGV)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGSEGV\033[m]\n", rname, tname);
+	else if (status == SIGBUS)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGBUS\033[m]\n", rname, tname);
+	else if (status == SIGILL)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGILL\033[m]\n", rname, tname);
+	else if (status == SIGABRT)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGABRT\033[m]\n", rname, tname);
+	else if (status == SIGPIPE)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGPIPE\033[m]\n", rname, tname);
+	else if (status == SIGFPE)
+		ft_dprintf(logfd, "%s: %s: [\033[41;30mSIGFPE\033[m]\n", rname, tname);
+	else if (status == SIGALRM)
+		ft_dprintf(logfd, "%s: %s: [\033[43;30mSIGTIMEOUT (2 seconds)\033[m]\n",
+			rname, tname);
+	else
+		ft_dprintf(logfd, "%s: %s: [\033[44;30mUNKNOWN ERROR/SIGNAL\033[m]\n",
+			rname, tname);
+}
+
+void	print_status(int log_fd, char *r_name, char *testname, int status)
+{
+	ft_log(log_fd, r_name, testname, status);
 	if (status == 0)
 		ft_printf("%s: %s: [\033[32mOK\033[m]\n", r_name, testname);
 	else if (status == 255)
 		ft_printf("%s: %s: [\033[31mKO\033[m]\n", r_name, testname);
-	else if (status == 11)
+	else if (status == SIGSEGV)
 		ft_printf("%s: %s: [\033[41;30mSIGSEGV\033[m]\n", r_name, testname);
-	else if (status == 7)
+	else if (status == SIGBUS)
 		ft_printf("%s: %s: [\033[41;30mSIGBUS\033[m]\n", r_name, testname);
-	else if (status == 4)
+	else if (status == SIGILL)
 		ft_printf("%s: %s: [\033[41;30mSIGILL\033[m]\n", r_name, testname);
-	else if (status == 6)
+	else if (status == SIGABRT)
 		ft_printf("%s: %s: [\033[41;30mSIGABRT\033[m]\n", r_name, testname);
-	else if (status == 13)
+	else if (status == SIGPIPE)
 		ft_printf("%s: %s: [\033[41;30mSIGPIPE\033[m]\n", r_name, testname);
-	else if (status == 8)
+	else if (status == SIGFPE)
 		ft_printf("%s: %s: [\033[41;30mSIGFPE\033[m]\n", r_name, testname);
-	else if (status == 14)
+	else if (status == SIGALRM)
 		ft_printf("%s: %s: [\033[43;30mSIGTIMEOUT (2 seconds)\033[m]\n",
 			r_name, testname);
 	else
@@ -45,7 +73,7 @@ void	print_status(char *r_name, char *testname, int status)
 			r_name, testname);
 }
 
-int	run_test(char *routine_name, void *data)
+int	run_test(int log_fd, char *routine_name, void *data)
 {
 	t_test	*test;
 	pid_t	pid;
@@ -56,6 +84,7 @@ int	run_test(char *routine_name, void *data)
 	if (pid == -1)
 	{
 		ft_printf("\033[31mfork() error in line %d\033[m\n", __LINE__);
+		ft_dprintf(log_fd, "\033[31mfork() error in line %d\033[m\n", __LINE__);
 		return (43);
 	}
 	else if (pid == 0)
@@ -65,13 +94,13 @@ int	run_test(char *routine_name, void *data)
 		status = WEXITSTATUS(status);
 	else if (WIFSIGNALED(status))
 		status = WTERMSIG(status);
-	print_status(routine_name, test->name, status);
+	print_status(log_fd, routine_name, test->name, status);
 	if (status)
 		return (1);
 	return (0);
 }
 
-int	execute_tests(t_ddeque *ddeque, char *routine_name)
+int	execute_tests(int log_fd, t_ddeque *ddeque, char *routine_name)
 {
 	t_ddeque_node	*head;
 	t_ddeque_node	*orig_head;
@@ -82,10 +111,10 @@ int	execute_tests(t_ddeque *ddeque, char *routine_name)
 	orig_head = head;
 	if (!head)
 		return (0);
-	sum += run_test(routine_name, head->data);
+	sum += run_test(log_fd, routine_name, head->data);
 	while (head->next != orig_head)
 	{
-		sum += run_test(routine_name, head->next->data);
+		sum += run_test(log_fd, routine_name, head->next->data);
 		head = head->next;
 	}
 	return (sum);
@@ -104,8 +133,13 @@ void	load_test(t_ddeque *tests, char *name, int (*func)(void))
 int	launch_tests(t_ddeque *tests, char *routine_name)
 {
 	int	number_of_tests_failed;
+	int	log_fd;
 
-	number_of_tests_failed = execute_tests(tests, routine_name);
+	log_fd = open(ft_strjoin(routine_name, ".log"),
+			O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	number_of_tests_failed = execute_tests(log_fd, tests, routine_name);
+	ft_dprintf(log_fd, "%d/%d tests succeded\n\n",
+		tests->size - (size_t)number_of_tests_failed, tests->size);
 	ft_printf("%d/%d tests succeded\n\n",
 		tests->size - (size_t)number_of_tests_failed, tests->size);
 	if (number_of_tests_failed == 0)
