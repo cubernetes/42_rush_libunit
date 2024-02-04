@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 19:36:56 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/03 20:52:18 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/04 17:54:15 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CC := cc
 RM := /bin/rm -f
 CP := /bin/cp -f
 
-CFLAGS := -O0 -g3 -Wall -Wextra -Werror -std=c89 -pedantic -Wconversion
+CFLAGS := -O0 -Wall -Wextra -Werror -std=c89 -pedantic -Wconversion -Wshadow
 
 all: libft $(NAME)
 
