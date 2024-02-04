@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:45:56 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 21:50:41 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/04 22:44:28 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ typedef struct s_test
 	int		(*func)(void);
 }			t_test;
 
-int			launch_tests(t_ddeque *tests, char *routine_name);
-void		load_test(t_ddeque *tests, char *name, int (*func)(void));
+int		launch_tests(t_ddeque *tests, char *routine_name);
+void	load_test(t_ddeque *tests, char *name, int (*func)(void));
+void	ft_log(int logfd, char *rname, char *tname, int status);
 
 #endif /* libunit_bonus.h. */
