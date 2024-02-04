@@ -15,15 +15,12 @@
 
 #define ROUTINE_NAME "STRDUP"
 
-<<<<<<< Updated upstream:real-tests/strdup_tests/00_strdup_launcher.c
 int	strdup_hello_test(void);
 int	strdup_null_test(void);
 int	strdup_bigger_string_test(void);
 int	strdup_zero_test(void);
 int	strdup_newline_test(void);
 
-=======
->>>>>>> Stashed changes:real-tests/strdup_tests/strlen_launcher.c
 int	strdup_launcher(void)
 {
 	t_ddeque	*tests;
