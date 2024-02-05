@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 20:40:54 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 23:31:27 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/05 21:23:59 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,15 @@ SRC += putchar_tests/02_putchar_b_test.c
 SRC += putchar_tests/03_putchar_zero_test.c
 SRC += putchar_tests/04_putchar_127_test.c
 SRC += putchar_tests/05_putchar_nl_test.c
+
+SRC += printf_tests/00_printf_launcher.c
+SRC += printf_tests/01_printf_hello_world_test.c
+SRC += printf_tests/02_printf_hello_world_nl_test.c
+SRC += printf_tests/03_printf_big_string_test.c
+SRC += printf_tests/04_printf_fmt_s_test.c
+SRC += printf_tests/05_printf_fmt_d_test.c
+SRC += printf_tests/06_printf_fmt_p_test.c
+SRC += printf_tests/07_printf_fmt_X_test.c
 
 vpath %.c strlen_tests abs_tests min_tests isdigit_tests isascii_tests atoi_tests
 

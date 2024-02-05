@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:06:39 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/03 17:26:06 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/05 21:28:42 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	strlen_launcher(void)
 
 	tests = ddeque_init();
 	load_test(tests, "Hello test", strlen_hello_test);
-	load_test(tests, "NULL test", strlen_null_test);
+	load_test(tests, "NULL test (expecting SIGSEGV)", strlen_null_test);
 	load_test(tests, "Bigger string test", strlen_bigger_string_test);
 	load_test(tests, "Zero test", strlen_zero_test);
 	load_test(tests, "newline test", strlen_newline_test);

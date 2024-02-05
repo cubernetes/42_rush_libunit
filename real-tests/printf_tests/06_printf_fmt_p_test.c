@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   06_printf_fmt_p_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 17:10:54 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/05 21:23:09 by tosuman          ###   ########.fr       */
+/*   Created: 2024/02/05 21:12:28 by tosuman           #+#    #+#             */
+/*   Updated: 2024/02/05 21:22:24 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "include/libft_unit_tests.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int	printf_fmt_p_test(void)
 {
-	abs_launcher();
-	strlen_launcher();
-	min_launcher();
-	atoi_launcher();
-	isdigit_launcher();
-	isascii_launcher();
-	putchar_launcher();
-	printf_launcher();
-	free_all_ptrs();
+	ft_printf("the ptr is: %p", 0xdeadbeef);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:12:30 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 23:18:51 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/05 21:23:16 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	atoi_launcher(void);
 int	isdigit_launcher(void);
 int	isascii_launcher(void);
 int	putchar_launcher(void);
+int	printf_launcher(void);
 
 #endif /* libft_unit_tests.h. */

@@ -6,7 +6,7 @@
 /*   By: tosuman <timo42@proton.me>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 23:40:07 by tosuman           #+#    #+#             */
-/*   Updated: 2024/02/04 23:38:45 by tosuman          ###   ########.fr       */
+/*   Updated: 2024/02/05 21:32:42 by tosuman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	run_test(int log_fd, char *routine_name, t_test *test)
 	else if (pid == 0)
 	{
 		(close(fds[0]), dup2(fds[1], STDOUT_FILENO));
+		alarm(1);
 		exit(test->func());
 	}
 	close(fds[1]);

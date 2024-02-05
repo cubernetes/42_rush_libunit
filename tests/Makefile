@@ -6,7 +6,7 @@
 #    By: tosuman <timo42@proton.me>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 20:14:25 by tosuman           #+#    #+#              #
-#    Updated: 2024/02/04 21:56:19 by tosuman          ###   ########.fr        #
+#    Updated: 2024/02/05 20:54:12 by tosuman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INCLUDE := include/bonus_tests.h
 
 LIBFT_DIR := ../libft
 LIBFT := libft.a
-LIBUNIT_DIR := ../framework
+LIBUNIT_DIR := ../framework_bonus
 LIBUNIT := libunit.a
 
 CC := gcc
